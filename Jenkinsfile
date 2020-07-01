@@ -9,7 +9,6 @@ stages {
     }
   }
 
-
  /* stage('Git Clone') {
     steps {
       sh 'sudo rm -r Terraform_Jenkins/;
