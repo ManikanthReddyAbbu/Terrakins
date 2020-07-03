@@ -11,6 +11,7 @@ stages {
       sh 'cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
     }
   }
+  
 
   stage("cloning project from git"){
           steps {
