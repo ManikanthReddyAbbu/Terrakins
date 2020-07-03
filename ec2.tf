@@ -1,8 +1,7 @@
 provider "aws" {
     region = "us-east-2"
   //shared_credentials_file = "/Users/tf_user/.aws/creds-2"
-    access_key = "AKIA4Y3HHPHQPTPSGIZG"
-    secret_key = "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"
+
     profile = "customprofile" 
 }
 
