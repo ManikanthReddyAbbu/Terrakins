@@ -5,9 +5,9 @@ stages {
   stage('Terraform Setup') {
     steps {
       sh ' echo "Started..!! " '
-      sh 'sudo mkdir terraform-jenkins'
-      sh 'sudo cp /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh  'cp /var/lib/jenkins/workspace/Terraform_Jenkins/Terrakins/ec2.tf /usr/local/bin/terraform-jenkins/'
+      sh 'mkdir terraform-jenkins'
+      sh 'cp /home/ubuntu/terraform-jenkins /usr/local/bin/'
+      sh 'cp /var/lib/jenkins/workspace/Terraform_Jenkins/Terrakins/ec2.tf /usr/local/bin/terraform-jenkins/'
     }
   }
 
