@@ -11,7 +11,6 @@ stages {
       sh 'sudo cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
     }
   }
-  
 
  /* stage("cloning project from git"){
           steps {
@@ -28,20 +27,24 @@ stages {
 
   stage('Terraform init') {
     steps {
-       sh "sudo cd /usr/local/bin/terraform-jenkins/terraform init"
+       sh 'cd /usr/local/bin/terraform-jenkins/'
+       sh 'sudo terraform init'
+       // sh 'cd /usr/local/bin/terraform-jenkins/ && sudo terraform init'
        // sh "cd terraform-jenkins/ && /usr/local/bin/terraform-jenkins/terraform init"
     }
   }
 
   stage('Terraform Plan') {
     steps {
-      sh 'sudo cd /usr/local/bin/terraform-jenkins/terraform plan'
+      sh 'cd /usr/local/bin/terraform-jenkins/'
+      sh 'sudo terraform plan'
     }
   }
 
   stage('Terraform apply') {
     steps {
-      sh 'sudo cd /usr/local/bin/terraform-jenkins/terraform apply'
+      sh 'cd /usr/local/bin/terraform-jenkins/'
+      sh 'sudo terraform apply'
       
     }
   }
