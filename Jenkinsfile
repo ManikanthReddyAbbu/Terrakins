@@ -7,8 +7,8 @@ stages {
     steps {
       sh ' echo "Started..!! " '
       sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
-      sh 'cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh 'cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
+      sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
+      sh 'sudo cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
     }
   }
   
