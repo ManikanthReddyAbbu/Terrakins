@@ -1,14 +1,14 @@
 pipeline {
 
 agent any
-  
+
 stages {
   stage('Terraform Setup') {
     steps {
       sh ' echo "Started..!! " '
-      sh 'mkdir terraform-jenkin'
-      sh 'cp /home/ubuntu/terraform-jenkin /usr/local/bin/'
-      sh 'cp /var/lib/jenkins/workspace/Terraform_Jenkin/Terrakins/ec2.tf /usr/local/bin/terraform-jenkin/'
+      sh 'mkdir terraform-jenkins'
+      sh 'cp /home/ubuntu/terraform-jenkins /usr/local/bin/'
+      sh 'cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
     }
   }
 
@@ -27,20 +27,20 @@ stages {
 
   stage('Terraform init') {
     steps {
-       sh "sudo cd /usr/local/bin/terraform-jenkin/terraform init"
+       sh "sudo cd /usr/local/bin/terraform-jenkins/terraform init"
        // sh "cd terraform-jenkins/ && /usr/local/bin/terraform-jenkins/terraform init"
     }
   }
 
   stage('Terraform Plan') {
     steps {
-      sh 'sudo cd /usr/local/bin/terraform-jenkin/terraform plan'
+      sh 'sudo cd /usr/local/bin/terraform-jenkins/terraform plan'
     }
   }
 
   stage('Terraform apply') {
     steps {
-      sh 'sudo cd /usr/local/bin/terraform-jenkin/terraform apply'
+      sh 'sudo cd /usr/local/bin/terraform-jenkins/terraform apply'
       
     }
   }
