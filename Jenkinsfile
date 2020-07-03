@@ -13,13 +13,13 @@ stages {
   }
   
 
-  stage("cloning project from git"){
+ /* stage("cloning project from git"){
           steps {
               sh 'sudo rm -r Terrakins/;git clone https://github.com/ManikanthReddyAbbu/Terrakins.git'
             
           }
         } 
- /* stage('Git Clone') {
+  stage('Git Clone') {
     steps {
       sh 'sudo rm -r Terraform_Jenkins/;
       sudo git clone https://github.com/ManikanthReddyAbbu/Terrafom_Jenkins.git'
