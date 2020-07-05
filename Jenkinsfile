@@ -9,7 +9,7 @@ stages {
       sh ' echo "Started..!! " '
      // sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
      // sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh 'sudo cp /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'
+      sh 'sudo cp -r /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'
     }
   }
 
