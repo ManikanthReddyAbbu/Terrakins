@@ -44,12 +44,11 @@ stages {
 
   stage('Terraform apply') {
     steps {
+      
       sh 'cd /usr/local/bin/terraform-jenkins/'
-<<<<<<< HEAD
-      sh 'sudo terraform apply'
-=======
+
       sh 'sudo terraform apply -y'
->>>>>>> 0d00a8a7b768bdfb0e48b233870035102b7d52f4
+
       
     }
   }
