@@ -7,9 +7,9 @@ stages {
   stage('Terraform Setup') {
     steps {
       sh ' echo "Started..!! " '
-      sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
-      sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh 'sudo cp /var/lib/jenkins/workspace/Terraform_Jenkins/ec2.tf /usr/local/bin/terraform-jenkins/'
+     // sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
+     // sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
+      sh 'sudo cp /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'
     }
   }
 
@@ -28,7 +28,7 @@ stages {
 
   stage('Terraform init') {
     steps {
-       sh 'cd /usr/local/bin/terraform-jenkins/'
+       sh 'cd /usr/local/bin/Terraform_Jenkins/'
        sh 'sudo terraform init'
        // sh 'cd /usr/local/bin/terraform-jenkins/ && sudo terraform init'
        // sh "cd terraform-jenkins/ && /usr/local/bin/terraform-jenkins/terraform init"
@@ -37,7 +37,7 @@ stages {
 
   stage('Terraform Plan') {
     steps {
-      sh 'cd /usr/local/bin/terraform-jenkins/'
+      sh 'cd /usr/local/bin/Terraform_Jenkins/'
       sh 'sudo terraform plan'
     }
   }
@@ -45,7 +45,7 @@ stages {
   stage('Terraform apply') {
     steps {
       
-      sh 'cd /usr/local/bin/terraform-jenkins/'
+      sh 'cd /usr/local/bin/Terraform_Jenkins/'
 
       sh 'sudo terraform apply -y'
 
