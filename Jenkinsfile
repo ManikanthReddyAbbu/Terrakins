@@ -37,7 +37,7 @@ stages {
   stage('Terraform Plan') {
     steps {
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-      sh 'sudo terraform plan'
+      sh 'sudo terraform plan -shared_credentials_file = "~/.aws/credentials" '
     }
   }
 
