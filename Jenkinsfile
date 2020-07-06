@@ -1,5 +1,4 @@
 #!/bin/bash
-
 pipeline {
   
 agent any
