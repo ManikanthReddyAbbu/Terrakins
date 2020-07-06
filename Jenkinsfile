@@ -46,7 +46,9 @@ stages {
     steps {
       
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-
+      sh 'export AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID"'
+      sh 'export AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"'
+      sh 'export AWS_DEFAULT_REGION="us-west-2"'
       sh 'sudo terraform apply -y'
 
       
