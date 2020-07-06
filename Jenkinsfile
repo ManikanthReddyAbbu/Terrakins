@@ -39,9 +39,7 @@ stages {
   stage('Terraform Plan') {
     steps {
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-      sh 'sudo terraform plan'
-      sh '${AWS_ACCESS_KEY_ID}'
-      sh '${AWS_SECRET_ACCESS_KEY} '
+      sh 'sudo terraform plan -$cred '
     }
   }
 
