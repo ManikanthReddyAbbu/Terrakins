@@ -1,7 +1,7 @@
 provider "aws" {
     region = "us-east-2"
-    /*shared_credentials_file = "~/.aws/credentials"
-    access_key = var.aws_access_key
+    shared_credentials_file = "/usr/local/bin/Terraform-Jenkins/credentials"
+    /*access_key = var.aws_access_key
     secret_key = var.aws_secret_key
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
     profile = "customprofile" */ 
