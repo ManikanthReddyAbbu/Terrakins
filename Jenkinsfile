@@ -40,7 +40,11 @@ stages {
    //   sh 'export AWS_ACCESS_KEY_ID="$access"'
    //   sh 'export AWS_SECRET_ACCESS_KEY="$secret"'
    //   sh 'export AWS_DEFAULT_REGION="us-west-2"'
+      sh 'cd'
+      sh 'sudo -s'
       sh 'sudo cp ~/.aws/credentials /usr/local/bin/Terraform-Jenkins/'
+      sh 'exit'
+      sh 'cd /usr/local/bin/Terraform-Jenkins/'
       sh 'sudo terraform plan'
     }
   }
