@@ -8,7 +8,9 @@ stages {
       sh ' echo "Started..!! " '
      // sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
      // sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh 'sudo cp -r /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'
+      sh 'sudo cp -r /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'      
+      sh 'sudo cp -r /var/lib/jenkins/.aws/credentials /usr/local/bin/Terraform-Jenkins/'
+      sh 'cd /usr/local/bin/Terraform-Jenkins/'
     }
   }
 
@@ -24,6 +26,7 @@ stages {
       sudo git clone https://github.com/ManikanthReddyAbbu/Terrafom_Jenkins.git'
     }
   } */
+  
 
   stage('Terraform init') {
     steps {
@@ -36,15 +39,11 @@ stages {
 
   stage('Terraform Plan') {
     steps {
-      sh 'cd /usr/local/bin/Terraform_Jenkins/'
+    //  sh 'cd /usr/local/bin/Terraform_Jenkins/'
    //   sh 'export AWS_ACCESS_KEY_ID="$access"'
    //   sh 'export AWS_SECRET_ACCESS_KEY="$secret"'
    //   sh 'export AWS_DEFAULT_REGION="us-west-2"'
-      sh 'cd'
-      sh 'sudo -s'
-      sh 'sudo cp ~/.aws/credentials /usr/local/bin/Terraform-Jenkins/'
-      sh 'exit'
-      sh 'cd /usr/local/bin/Terraform-Jenkins/'
+      
       sh 'sudo terraform plan'
     }
   }
