@@ -38,7 +38,10 @@ stages {
   stage('Terraform Plan') {
     steps {
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-      sh 'sudo terraform plan;$AWS_ACCESS_KEY_ID;$AWS_SECRET_ACCESS_KEY' 
+      sh 'export AWS_ACCESS_KEY_ID="$access"'
+      sh 'export AWS_SECRET_ACCESS_KEY="$secret"'
+      sh 'export AWS_DEFAULT_REGION="us-west-2"'
+      sh 'sudo terraform plan 
     }
   }
 
@@ -46,9 +49,6 @@ stages {
     steps {
       
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-      sh 'export AWS_ACCESS_KEY_ID="$access"'
-      sh 'export AWS_SECRET_ACCESS_KEY="$secret"'
-      sh 'export AWS_DEFAULT_REGION="us-west-2"'
       sh 'sudo terraform apply -y'
 
       
