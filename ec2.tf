@@ -29,8 +29,7 @@ resource "aws_vpc" "myvpc" {
     tags = {
         Name = "COVID-19"
     }
-}
-    
+}    
     
 /*
     resource "aws_s3_bucket" "my_S3_bucket"{
