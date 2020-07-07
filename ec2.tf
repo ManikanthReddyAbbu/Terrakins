@@ -24,7 +24,7 @@ resource "aws_instance" "myEC2_instance" {
     Name = "Terra-kins"
   }
 
-  provisioner "remote-exec"{
+  /* provisioner "remote-exec"{
     inline=[
           "sudo apt-get update",
           "sudo apt-get install -y nginix1.12",
@@ -36,7 +36,7 @@ resource "aws_instance" "myEC2_instance" {
           user = "ubuntu"
           private_key = "${file("./terraform.pem")}"
           host = "self.public_ip"
-  }
+  } */
 }
 resource "aws_vpc" "myvpc" {
     cidr_block = "10.10.0.0/16"
