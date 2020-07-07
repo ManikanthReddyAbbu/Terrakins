@@ -31,6 +31,7 @@ resource "aws_vpc" "myvpc" {
     }
 }
     
+    
 /*
     resource "aws_s3_bucket" "my_S3_bucket"{
     bucket = "my-tf-test-bucket"
