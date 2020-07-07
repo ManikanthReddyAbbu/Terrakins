@@ -19,7 +19,7 @@ provider "aws" {
 resource "aws_instance" "myEC2_instance" {
   ami           = "ami-04781752c9b20ea41"
   instance_type = "t2.micro"
-  key_pair      = "terraform"
+  key_name      = "terraform"
   tags = {
     Name = "Terra-kins"
   }
