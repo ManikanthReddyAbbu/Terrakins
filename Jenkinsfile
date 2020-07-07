@@ -10,7 +10,7 @@ stages {
      // sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
       sh 'sudo cp -r /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'      
       sh 'sudo cp -r /home/ubuntu/.aws/credentials /usr/local/bin/Terraform_Jenkins/'
-      sh 'cd /usr/local/bin/Terraform-Jenkins/'
+      sh 'cd /usr/local/bin/Terraform_Jenkins/'
     }
   }
 
