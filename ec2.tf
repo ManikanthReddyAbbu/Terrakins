@@ -39,14 +39,14 @@ resource "aws_instance" "myEC2_instance" {
           host = "self.public_ip"
   } 
 }
-resource "aws_vpc" "myvpc" {
+/*resource "aws_vpc" "myvpc" {
     cidr_block = "10.10.0.0/16"
     tags = {
         Name = "COVID-19"
     }
 }    
     
-/*
+
     resource "aws_s3_bucket" "my_S3_bucket"{
     bucket = "my-tf-test-bucket"
     acl = "private"
