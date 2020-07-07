@@ -30,7 +30,8 @@ resource "aws_vpc" "myvpc" {
         Name = "COVID-19"
     }
 }
-resource "aws_s3_bucket" "my_S3_bucket"{
+/*
+    resource "aws_s3_bucket" "my_S3_bucket"{
     bucket = "my-tf-test-bucket"
     acl = "private"
 
@@ -39,4 +40,4 @@ resource "aws_s3_bucket" "my_S3_bucket"{
         Environment = "Dev"
     }
 }
-
+*/
