@@ -52,7 +52,7 @@ stages {
     steps {
       
       sh 'cd /usr/local/bin/Terraform_Jenkins/'
-      sh 'sudo terraform apply'
+      sh 'sudo terraform apply -yes'
 
       
     }
