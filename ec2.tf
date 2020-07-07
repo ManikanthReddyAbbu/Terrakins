@@ -5,6 +5,7 @@ provider "aws" {
     secret_key = var.aws_secret_key
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
     profile = "customprofile" */ 
+    
 }
 
 /*data "aws_ami" "ubuntu" {
