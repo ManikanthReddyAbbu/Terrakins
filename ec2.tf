@@ -1,6 +1,6 @@
 provider "aws" {
     region = "us-east-2"
-    shared_credentials_file = "/usr/local/bin/Terraform-Jenkins/credentials"
+    shared_credentials_file = "/usr/local/bin/Terraform_Jenkins/credentials"
     /*access_key = var.aws_access_key
     secret_key = var.aws_secret_key
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
