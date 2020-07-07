@@ -19,9 +19,23 @@ provider "aws" {
 resource "aws_instance" "myEC2_instance" {
   ami           = "ami-04781752c9b20ea41"
   instance_type = "t2.micro"
-
+  key_pair      = "terraform"
   tags = {
     Name = "Terra-kins"
+  }
+
+  provisioner "remote-exec"{
+    inline=[
+          "sudo apt-get update",
+          "sudo apt-get install -y nginix1.12",
+          "sudo systemctl start nginix"
+    ]
+  }
+  connection {
+          type = "ssh"
+          user = "ubuntu"
+          private_key = file("./terraform.pem")
+          host = "self.public_ip"
   }
 }
 resource "aws_vpc" "myvpc" {
