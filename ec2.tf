@@ -20,6 +20,7 @@ resource "aws_instance" "myEC2_instance" {
   ami           = "ami-04781752c9b20ea41"
   instance_type = "t2.micro"
   key_name      = "terraform-jenkins"
+  security_groups = ["sshonly"]
   tags = {
     Name = "Terra-kins"
   }
@@ -35,7 +36,7 @@ resource "aws_instance" "myEC2_instance" {
           type = "ssh"
           user = "ubuntu"
           private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
-          host = "self.public_ip"
+          host = "self.ipv4_address"
   } 
 }
 /*resource "aws_vpc" "myvpc" {
