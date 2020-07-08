@@ -34,7 +34,7 @@ resource "aws_instance" "myEC2_instance" {
   connection {
           type = "ssh"
           user = "ubuntu"
-          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
+          private_key = "file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")"
           host = "self.public_ip"
   } 
 }
