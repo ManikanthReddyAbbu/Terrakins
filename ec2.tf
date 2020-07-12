@@ -30,13 +30,14 @@ resource "aws_instance" "myEC2_instance" {
           "sudo apt-get install -y nginix1.12",
           "sudo systemctl start nginix"
     ]
-  }
+  
   connection {
           type = "ssh"
           user = "ubuntu"
           private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
           host = "self.ipv4_address"
-  } 
+      }  
+   } 
 }
 /*resource "aws_vpc" "myvpc" {
     cidr_block = "10.10.0.0/16"
