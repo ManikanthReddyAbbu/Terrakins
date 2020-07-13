@@ -23,19 +23,20 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-
+     connection {
+          type = "ssh"
+          user = "ubuntu"
+          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
+          host = "${aws_instance.myEC2_instance.public_ip}"
+      } 
+    
     provisioner "remote-exec"{
     inline=[
           "sudo apt-get update",
           "sudo apt-get install -y nginix1.12",
           "sudo systemctl start nginix"
     ]
-  connection {
-          type = "ssh"
-          user = "ubuntu"
-          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
-          host = "self.ipv4_address"
-      }  
+  
    } 
 }
 /*resource "aws_vpc" "myvpc" {
