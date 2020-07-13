@@ -30,7 +30,6 @@ resource "aws_instance" "myEC2_instance" {
           "sudo apt-get install -y nginix1.12",
           "sudo systemctl start nginix"
     ]
-  
   connection {
           type = "ssh"
           user = "ubuntu"
