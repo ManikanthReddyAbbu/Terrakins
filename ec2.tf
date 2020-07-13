@@ -27,7 +27,7 @@ resource "aws_instance" "myEC2_instance" {
           type = "ssh"
           user = "ubuntu"
           private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
-          host = "${aws_instance.myEC2_instance.public_ip}"
+          host = "self.public_ip"
       } 
     
     provisioner "remote-exec"{
