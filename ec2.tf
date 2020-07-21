@@ -36,8 +36,8 @@ resource "aws_instance" "myEC2_instance" {
           "sudo apt-get update",
          //  "sudo apt-get install -y nginx1.12",  
          //  "sudo systemctl start nginx",
-         "sudo apt-get --purge remove git ",
-         "sudo apt-get --purge remove apache2 "
+        // "sudo apt purge git ",
+         "sudo apt purge apache2 "
          
     ]
   
