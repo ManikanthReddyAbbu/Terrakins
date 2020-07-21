@@ -34,10 +34,10 @@ resource "aws_instance" "myEC2_instance" {
     provisioner "remote-exec"{
     inline=[
           "sudo apt-get update",
-           "sudo apt-get install -y nginx1.12",  
-           "sudo systemctl start nginx",
-        // "sudo apt-get install git -y",
-       //  "sudo apt-get install apache2 -y"
+         //  "sudo apt-get install -y nginx1.12",  
+         //  "sudo systemctl start nginx",
+         "sudo apt-get remove git -y",
+         "sudo apt-get remove apache2 -y"
          
     ]
   
