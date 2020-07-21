@@ -60,6 +60,7 @@ stages {
   stage('Terraform Ended') {
     steps {
         sh 'echo "The End..!!" '
+        sh 'echo "Thanks!!" '
     }
   }
 
