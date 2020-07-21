@@ -16,8 +16,7 @@ stages {
 
  /* stage("cloning project from git"){
           steps {
-              sh 'sudo rm -r Terrakins/;git clone https://github.com/ManikanthReddyAbbu/Terrakins.git'
-            
+              sh 'sudo rm -r Terrakins/;git clone https://github.com/ManikanthReddyAbbu/Terrakins.git'         
           }
         } 
   stage('Git Clone') {
