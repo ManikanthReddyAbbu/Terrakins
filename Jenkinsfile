@@ -26,7 +26,6 @@ stages {
     }
   } */
   
-
   stage('Terraform init') {
     steps {
        sh 'cd /usr/local/bin/Terraform_Jenkins/'
