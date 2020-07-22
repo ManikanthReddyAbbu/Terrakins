@@ -38,7 +38,7 @@ resource "aws_instance" "myEC2_instance" {
          //  "sudo systemctl start nginx",
         // "sudo apt purge git ",
          "sudo apt-get purge apache2 "
-         
+        
     ]
   
    } 
