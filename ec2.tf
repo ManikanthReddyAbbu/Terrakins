@@ -7,7 +7,6 @@ provider "aws" {
     profile = "customprofile" */     
 }
 
-
 /*data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -52,7 +51,7 @@ resource "aws_instance" "myEC2_instance" {
 }    
     
 
-    resource "aws_s3_bucket" "my_S3_bucket"{
+ /*   resource "aws_s3_bucket" "my_S3_bucket"{
     bucket = "my-tf-test-bucket"
     acl = "private"
 
@@ -60,5 +59,5 @@ resource "aws_instance" "myEC2_instance" {
         Name = "My Quarantine Bucket"
         Environment = "Dev"
     }
-}
+}*/
 
