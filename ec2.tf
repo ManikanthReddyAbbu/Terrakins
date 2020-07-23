@@ -14,7 +14,7 @@ provider "aws" {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
   } */
-        
+      
 
 resource "aws_instance" "myEC2_instance" {
   ami           = "ami-04781752c9b20ea41"
