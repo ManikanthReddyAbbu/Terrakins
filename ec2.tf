@@ -23,24 +23,41 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-     connection {
+    
+    
+    provisioner "remote-exec"{
+    inline=[
+             "sudo apt-get update",
+         //  "sudo apt-get install -y nginx1.12",  
+         //  "sudo systemctl start nginx",
+         //  "sudo apt purge git ",
+             "sudo apt-get purge -y apache2 "
+           ]
+        connection {
           type = "ssh"
           user = "ubuntu"
           private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
           host = "${aws_instance.myEC2_instance.public_ip}"
       } 
     
-    provisioner "remote-exec"{
-    inline=[
-          "sudo apt-get update",
-         //  "sudo apt-get install -y nginx1.12",  
-         //  "sudo systemctl start nginx",
-        // "sudo apt purge git ",
-         "sudo apt-get purge -y apache2 "
-        
-    ]
-  
    } 
+    
+      provisioner "remote-exec"{
+    inline=[
+             "sudo apt-get update",
+           "sudo apt-get install -y nginx1.12",  
+           "sudo systemctl start nginx",
+         
+           ]
+        connection {
+          type = "ssh"
+          user = "ubuntu"
+          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
+          host = "${aws_instance.myEC2_instance.public_ip}"
+      } 
+    
+   } 
+
 }
 /*
     resource "aws_vpc" "myvpc" {
