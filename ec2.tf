@@ -1,12 +1,11 @@
 provider "aws" {
-    region = "us-east-2"
+    region = "us-east-1"
     shared_credentials_file = "/usr/local/bin/Terraform_Jenkins/credentials"
     /*access_key = var.aws_access_key
     secret_key = var.aws_secret_key
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
     profile = "customprofile" */     
 }
-
 /*data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -16,7 +15,7 @@ provider "aws" {
   } */
       
 resource "aws_instance" "myEC2_instance" {
-  ami           = "ami-04781752c9b20ea41"
+  ami           = "ami-0f9fc25dd2506cf6d"
   instance_type = "t2.micro"
   key_name      = "terraform-jenkins"
 //security_groups = ["sshonly"]
