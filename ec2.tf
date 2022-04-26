@@ -24,7 +24,7 @@ resource "aws_key_pair" "terraform-jenkins" {
 resource "aws_instance" "myEC2_instance" {
   ami           = "ami-0f9fc25dd2506cf6d"
   instance_type = "t2.micro"
-  key_name      = "terraform-jenkins"
+  key_name      = "Jenkins"
 //security_groups = ["sshonly"]
   tags = {
     Name = "Terra-kins"
