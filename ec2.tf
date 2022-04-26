@@ -6,6 +6,7 @@ provider "aws" {
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
     profile = "customprofile" */     
 }
+
 /*data "aws_ami" "ubuntu" {
   most_recent = true
 
