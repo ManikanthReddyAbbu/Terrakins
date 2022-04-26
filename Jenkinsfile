@@ -25,7 +25,6 @@ stages {
     }
   } */
 
-  
   stage('Terraform init') {
     steps {
        sh 'cd /usr/local/bin/Terrakins_master/'
