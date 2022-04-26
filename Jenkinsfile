@@ -7,9 +7,9 @@ stages {
       sh ' echo "Started..!! " '
      // sh 'sudo mkdir /home/ubuntu/terraform-jenkins'
      // sh 'sudo cp -r /home/ubuntu/terraform-jenkins /usr/local/bin/'
-      sh 'sudo cp -r /var/lib/jenkins/workspace/Terraform_Jenkins /usr/local/bin/'      
-      sh 'sudo cp -r /home/ubuntu/.aws/credentials /usr/local/bin/Terraform_Jenkins/'
-      sh 'cd /usr/local/bin/Terraform_Jenkins/'
+      sh 'sudo cp -r /var/lib/jenkins/workspace/Terrakins_master /usr/local/bin/'      
+      sh 'sudo cp -r /home/ubuntu/.aws/credentials /usr/local/bin/Terrakins_master/'
+      sh 'cd /usr/local/bin/Terrakins_master/'
     }
   }
 
@@ -27,7 +27,7 @@ stages {
   
   stage('Terraform init') {
     steps {
-       sh 'cd /usr/local/bin/Terraform_Jenkins/'
+       sh 'cd /usr/local/bin/Terrakins_master/'
        sh 'sudo terraform init'
        // sh 'cd /usr/local/bin/terraform-jenkins/ && sudo terraform init'
        // sh "cd terraform-jenkins/ && /usr/local/bin/terraform-jenkins/terraform init"
@@ -48,7 +48,7 @@ stages {
   stage('Terraform apply') {
     steps {
       
-      sh 'cd /usr/local/bin/Terraform_Jenkins/'
+      sh 'cd /usr/local/bin/Terrakins_master/'
       sh 'sudo terraform apply -auto-approve'
 
       
