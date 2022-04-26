@@ -47,6 +47,8 @@ resource "aws_instance" "myEC2_instance" {
       }
     
    } 
+    
+}   
  /*   
       provisioner "remote-exec"{
     inline=[
