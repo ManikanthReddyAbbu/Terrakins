@@ -15,12 +15,12 @@ provider "aws" {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
   } */
-
+/*
 resource "aws_key_pair" "terraform-jenkins" {
   key_name   = "terraform-jenkins"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdjnNZSM+VY06x0vIMELiF+xZ+kweaHtHrrpQRDasG/iIyHlu1GdEy+rtq7XP63o4vDzmLDwHDRJb9RpYQtJ7d8mrUMsxexoZJq3+4yEyjzUAm8VD+YPQDk0Is+5NuC/TFWk+6c9zAhA5i/w0mBdHRno+bi5ugU3NpNMNfWa0/l6Y2N9DFz8Ld3XdPVzsTqWckuxGJKOQueO5ny9IL1tFCp9+JfHwtzFpb7ELsvYGHnvzWO8T0rL4558jpOm8wxmhHL4LqzHWcYA/qbkD6onvRwFU6DV4x6ISeoAAdaLnLqqX+IL3WkvIFWX/8tP4RdJAhOECxS8bU89Mf250VH2M1 Jenkins"
 }
-    
+  */  
 resource "aws_instance" "myEC2_instance" {
   ami           = "ami-0f9fc25dd2506cf6d"
   instance_type = "t2.micro"
@@ -42,7 +42,7 @@ resource "aws_instance" "myEC2_instance" {
         connection {
           type = "ssh"
           user = "ubuntu"
-          private_key = "${file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")}"
+          private_key = {file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")
           host = "${aws_instance.myEC2_instance.public_ip}"
       }
     
