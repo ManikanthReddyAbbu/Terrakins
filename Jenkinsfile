@@ -24,6 +24,7 @@ stages {
       sudo git clone https://github.com/ManikanthReddyAbbu/Terrafom_Jenkins.git'
     }
   } */
+
   
   stage('Terraform init') {
     steps {
