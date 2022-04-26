@@ -1,6 +1,6 @@
 provider "aws" {
     region = "us-east-1"
-    shared_credentials_file = "/usr/local/bin/Terraform_Jenkins/credentials"
+    shared_credentials_file = "/usr/local/bin/Terrakins_master/credentials"
     /*access_key = var.aws_access_key
     secret_key = var.aws_secret_key
     shared_credentials_file = "/Users/tf_user/.aws/creds-2"
@@ -37,7 +37,7 @@ resource "aws_instance" "myEC2_instance" {
         connection {
           type = "ssh"
           user = "ubuntu"
-          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
+          private_key = file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")
           host = "${aws_instance.myEC2_instance.public_ip}"
       }
     
@@ -53,7 +53,7 @@ resource "aws_instance" "myEC2_instance" {
         connection {
           type = "ssh"
           user = "ubuntu"
-          private_key = file("/usr/local/bin/Terraform_Jenkins/terraform-jenkins.pem")
+          private_key = file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")
           host = "${aws_instance.myEC2_instance.public_ip}"
       } 
     
