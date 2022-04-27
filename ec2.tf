@@ -22,7 +22,7 @@ resource "aws_key_pair" "terraform-jenkins" {
 }
   */  
 resource "aws_instance" "myEC2_instance" {
-  ami           = "ami-0b49a4a6e8e22fa16"
+  ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
   key_name      = "Jenkins"
 //security_groups = ["sshonly"]
