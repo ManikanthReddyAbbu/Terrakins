@@ -43,7 +43,7 @@ resource "aws_instance" "myEC2_instance" {
           type = "ssh"
           user = "ubuntu"
           host = "${aws_instance.myEC2_instance.public_ip}"
-          private_key = "${file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")}"
+          private_key = "file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")"
           
       }
     
@@ -74,7 +74,7 @@ resource "aws_instance" "myEC2_instance" {
     tags = {
         Name = "COVID-19"
     }
-} */   
+}    
     
 
     resource "aws_s3_bucket" "my_S3_bucket"{
@@ -85,5 +85,5 @@ resource "aws_instance" "myEC2_instance" {
         Name = "My Quarantine Bucket"
         Environment = "Dev"
     }
-}
+} */
 
