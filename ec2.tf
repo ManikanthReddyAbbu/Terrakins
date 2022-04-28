@@ -29,8 +29,8 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-    
-    
+}    
+ /*   
     provisioner "remote-exec"{
     inline=[
              "sudo apt-get update",
@@ -50,7 +50,7 @@ resource "aws_instance" "myEC2_instance" {
    } 
     
 }   
- /*   
+    
       provisioner "remote-exec"{
     inline=[
              "sudo apt-get update",
