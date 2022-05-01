@@ -49,7 +49,7 @@ resource "aws_instance" "myEC2_instance" {
     
    } 
     
-}   
+*/   
     
       provisioner "remote-exec"{
     inline=[
@@ -67,7 +67,7 @@ resource "aws_instance" "myEC2_instance" {
     
    } 
 
-*/
+}
 /*
     resource "aws_vpc" "myvpc" {
     cidr_block = "10.10.0.0/16"
