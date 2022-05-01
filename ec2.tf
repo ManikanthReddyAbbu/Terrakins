@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    aws = {
+      version = ">= 2.7.0"
+      source = "hashicorp/aws"
+    }
+  }
+}
 provider "aws" {
     region = "us-east-1"
     shared_credentials_files = ["/usr/local/bin/Terrakins_master/credentials"]
@@ -53,7 +61,7 @@ resource "aws_instance" "myEC2_instance" {
     
       provisioner "remote-exec"{
     inline=[
-             "sudo apt-get update",
+           "sudo apt-get update",
            "sudo apt-get install -y nginx1.12",  
            "sudo systemctl start nginx",
          
