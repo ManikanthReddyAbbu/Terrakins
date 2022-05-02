@@ -1,3 +1,5 @@
+def slackResponse = slackSend(channel: "terrakins, message: "BUILD ALERT")
+
 pipeline {
   
 agent any
@@ -57,6 +59,7 @@ stages {
 
   stage('Terraform Ended') {
     steps {
+        slackSend(channel: slackResponse.channelId, message: "Build : ${env.JOB_NAME} successful ${env.BUILD_URL}", timestamp: slackResponse.ts)
         sh 'echo "The End..!!" '
         sh 'echo "Thanks!!" '
     }
