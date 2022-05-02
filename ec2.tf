@@ -37,7 +37,8 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-    
+
+ 
  /*   
     provisioner "remote-exec"{
     inline=[
