@@ -1,4 +1,4 @@
-def slackResponse = slackSend(channel: "terrakins, message: "BUILD ALERT")
+def slackResponse = slackSend(channel: "terrakins", message: "BUILD ALERT")
 
 pipeline {
   
