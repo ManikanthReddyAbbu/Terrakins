@@ -24,6 +24,7 @@ provider "aws" {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
   } */
+
 /*
 resource "aws_key_pair" "terraform-jenkins" {
   key_name   = "terraform-jenkins"
