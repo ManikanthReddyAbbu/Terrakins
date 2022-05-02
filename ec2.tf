@@ -9,11 +9,7 @@ terraform {
 
 provider "aws" {
     region = "us-east-1"
-    shared_credentials_files = ["/usr/local/bin/Terrakins_master/credentials"]
-    /*access_key = var.aws_access_key
-    secret_key = var.aws_secret_key
-    shared_credentials_file = "/Users/tf_user/.aws/creds-2"
-    profile = "customprofile" */     
+    shared_credentials_files = ["/usr/local/bin/Terrakins_master/credentials"]    
 }
 
 /*data "aws_ami" "ubuntu" {
@@ -38,7 +34,7 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-
+}
  
  /*   
     provisioner "remote-exec"{
@@ -59,7 +55,7 @@ resource "aws_instance" "myEC2_instance" {
     
    } 
     
- */ 
+
     
     provisioner "remote-exec"{
     inline=[
@@ -76,7 +72,7 @@ resource "aws_instance" "myEC2_instance" {
     
    } 
 
-}
+*/
 
     resource "aws_vpc" "myvpc" {
     cidr_block = "10.10.0.0/16"
