@@ -34,29 +34,8 @@ resource "aws_instance" "myEC2_instance" {
   tags = {
     Name = "Terra-kins"
   }
-}
- 
- /*   
-    provisioner "remote-exec"{
-    inline=[
-             "sudo apt-get update",
-         //  "sudo apt-get install -y nginx1.12",  
-         //  "sudo systemctl start nginx",
-         //  "sudo apt purge git ",
-             "sudo apt-get purge -y apache2 "
-           ]
-        connection {
-          type = "ssh"
-          user = "ubuntu"
-          host = "${aws_instance.myEC2_instance.public_ip}"
-          private_key = file("/usr/local/bin/Terrakins_master/terraform-jenkins.pem")
-          
-      }
-    
-   } 
-    
-
-    
+} 
+/*   
     provisioner "remote-exec"{
     inline=[
            "sudo apt-get update",
@@ -81,14 +60,13 @@ resource "aws_instance" "myEC2_instance" {
     }
 }    
     
-/*
     resource "aws_s3_bucket" "my_S3_bucket"{
     bucket = "my-tf-test-bucket"
     acl = "private"
 
     tags = {
-        Name = "My Quarantine Bucket"
+        Name = "Self-Quarantine Bucket"
         Environment = "Dev"
     }
-} */
+} 
 

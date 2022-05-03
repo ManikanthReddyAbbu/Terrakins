@@ -23,7 +23,7 @@ stages {
   stage('Git Clone') {
     steps {
       sh 'sudo rm -r Terraform_Jenkins/;
-      sudo git clone https://github.com/ManikanthReddyAbbu/Terrafom_Jenkins.git'
+      sudo git clone https://github.com/ManikanthReddyAbbu/Terrakins.git
     }
   } */
 
@@ -31,29 +31,21 @@ stages {
     steps {
        sh 'cd /usr/local/bin/Terrakins_master/'
        sh 'sudo terraform init'
-       // sh 'cd /usr/local/bin/terraform-jenkins/ && sudo terraform init'
-       // sh "cd terraform-jenkins/ && /usr/local/bin/terraform-jenkins/terraform init"
+
     }
   }
 
   stage('Terraform Plan') {
     steps {
-    //  sh 'cd /usr/local/bin/Terraform_Jenkins/'
-   //   sh 'export AWS_ACCESS_KEY_ID="$access"'
-   //   sh 'export AWS_SECRET_ACCESS_KEY="$secret"'
-   //   sh 'export AWS_DEFAULT_REGION="us-west-2"'
-      
+
       sh 'sudo terraform plan'
     }
   }
 
   stage('Terraform apply') {
-    steps {
-      
+    steps {    
       sh 'cd /usr/local/bin/Terrakins_master/'
-      sh 'sudo terraform apply -auto-approve'
-
-      
+      sh 'sudo terraform apply -auto-approve'    
     }
   }
 
@@ -61,11 +53,9 @@ stages {
     steps {
         slackSend(channel: slackResponse.channelId, message: "Build : ${env.JOB_NAME} successful ${env.BUILD_URL}", timestamp: slackResponse.ts)
         sh 'echo "The End..!!" '
-        sh 'echo "Thanks!!" '
     }
   }
 
 }
 
 }
-
