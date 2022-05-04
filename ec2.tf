@@ -60,12 +60,12 @@ resource "aws_instance" "myEC2_instance" {
     }
 }    
     
-    resource "aws_s3_bucket" "my_S3_bucket"{
-    bucket = "my-tf-test-bucket"
+    resource "aws_s3_bucket" "my_S3"{
+    bucket = "my-tf-bucket"
     acl = "private"
 
     tags = {
-        Name = "Self-Quarantine Bucket"
+        Name = "Self-Quarantine-Bucket"
         Environment = "Dev"
     }
 } 
