@@ -59,7 +59,7 @@ resource "aws_instance" "myEC2_instance" {
         Name = "COVID-19"
     }
 }    
-    
+ /*   
     resource "aws_s3_bucket" "my_S3"{
     bucket = "my-tf-bucket"
     acl = "private"
@@ -68,5 +68,5 @@ resource "aws_instance" "myEC2_instance" {
         Name = "Self-Quarantine-Bucket"
         Environment = "Dev"
     }
-} 
+} */
 
